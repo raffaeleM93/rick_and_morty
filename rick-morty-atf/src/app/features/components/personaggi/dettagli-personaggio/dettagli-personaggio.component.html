@@ -1,0 +1,58 @@
+<div class="row margin">
+  <div class="col-xs-12 col-sm-5 col-md-5 centered mt-5">
+    <button (click)="indietro()" class="mb-3" mat-button>Indietro</button>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="title">{{
+            dettagliPersonaggio[0].name
+          }}</mat-card-title>
+          <mat-card-subtitle>
+            <svg height="19" width="10">
+              <circle
+                id="circle"
+                cx="5"
+                cy="9"
+                r="4"
+                [ngStyle]="{
+                  fill:
+                    dettagliPersonaggio[0].status === 'Alive'
+                      ? 'green'
+                      : dettagliPersonaggio[0].status === 'Dead'
+                      ? 'red'
+                      : 'orange'
+                }"
+              />
+            </svg>
+            {{
+              dettagliPersonaggio[0].status === "Alive"
+                ? "In vita"
+                : dettagliPersonaggio[0].status === "Dead"
+                ? "Defunto"
+                : "Sconosciuto"
+            }}
+          </mat-card-subtitle>
+          <img mat-card-lg-image [src]="dettagliPersonaggio[0].image" />
+          <mat-card-subtitle style="margin-top: 30px">
+            Specie: {{ dettagliPersonaggio[0].species }}
+          </mat-card-subtitle>
+          <mat-card-subtitle style="margin-top: 10px;">
+            Genere: {{ dettagliPersonaggio[0].gender === 'Male'? 'Maschile' : 'Femminile' }}
+          </mat-card-subtitle>
+          <mat-card-subtitle style="margin-top: 10px;">
+            Posizione: {{ dettagliPersonaggio[0].location.name }}
+          </mat-card-subtitle>
+          <mat-card-subtitle style="margin-top: 10px;">
+            Episodi: {{ getNumEpisodi() }}
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-subtitle class="date" style="margin: 15px; text-align: right; margin-right: 23px;"
+      ><small
+        >Data creazione:
+        {{ dettagliPersonaggio[0].created | date : "MM/dd/yy" }}</small
+      ></mat-card-subtitle
+    >
+    </mat-card>
+  </div>
+</div>

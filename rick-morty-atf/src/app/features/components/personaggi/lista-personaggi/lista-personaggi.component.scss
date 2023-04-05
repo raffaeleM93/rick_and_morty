@@ -1,0 +1,29 @@
+.margin {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.card {
+  max-width: 400px;
+  margin-bottom: 25px;
+  transition: transform 0.05s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.date{
+    font-size: small;
+}
+
+.modal{
+  padding-top: 200px;
+  margin-left: 500px;
+  width: 300px;
+}

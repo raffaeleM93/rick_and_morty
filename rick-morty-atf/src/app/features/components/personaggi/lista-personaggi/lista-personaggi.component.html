@@ -1,0 +1,30 @@
+<div class="row margin">
+  <div
+    class="col-xs-12 col-sm-6 col-md-3"
+    *ngFor="let personaggio of personaggi"
+  >
+    <mat-card [routerLink]="['/dettagli/personaggio/', personaggio.id]" class="card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="title">{{ handleName(personaggio.name) }}</mat-card-title>          
+          <mat-card-subtitle>                
+                <svg height="19" width="10">
+                    <circle id="circle" cx="5" cy="9" r="4" [ngStyle]="{'fill': personaggio.status === 'Alive' ? 'green' : personaggio.status === 'Dead'? 'red' : 'orange'}" />
+                </svg>
+                {{ personaggio.status === 'Alive' ? 'In vita' : personaggio.status === 'Dead'? 'Defunto' : 'Sconosciuto'}}
+          </mat-card-subtitle>
+          <mat-card-subtitle class="date" style="margin-top: 40px;"><small>Data creazione: {{ personaggio.created | date:"MM/dd/yy" }}</small></mat-card-subtitle>
+          <img
+            mat-card-md-image
+            [src]="personaggio.image"
+          />
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+

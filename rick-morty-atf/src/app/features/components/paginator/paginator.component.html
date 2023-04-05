@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <div class="text-end">
+            <button (click)="tornaSu()" type="button" class="btn btn-dark"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="paginator" class="container pb-5">
+  <div class="col-md-12 text-center">
+    <button (click)="firstPage()" mat-button [disabled]="disableInizio">Inizio</button>
+    <button (click)="prevPage()" [disabled]="disablePrev" style="font-size: 28px; height: 40px;" mat-button><i class="fa-solid fa-arrow-left"></i></button>
+    <span style="display: inline-flex; margin-left: 8px; margin-right: 8px;">
+      <p>Pag. {{ pageCounter }} di 42</p>
+    </span>
+    <button (click)="nextPage()" [disabled]="disableNext" style="font-size: 28px; height: 40px;" mat-button><i class="fa-solid fa-arrow-right"></i></button>
+    <button (click)="lastPage()" mat-button [disabled]="disableFine">Fine</button>
+  </div>
+</div>

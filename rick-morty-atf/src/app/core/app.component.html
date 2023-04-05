@@ -1,0 +1,12 @@
+<!-- TOOLBAR -->
+<app-navbar></app-navbar>
+<!-- RICERCA PERSONAGGIO -->
+<app-ricerca *ngIf="!disableRP"></app-ricerca>
+
+
+<!-- LISTA PERSONAGGI - DETTAGLIO -->
+<router-outlet></router-outlet>
+
+
+<!-- PAGINATOR -->
+<app-paginator *ngIf="!disableRP"></app-paginator>
